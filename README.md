@@ -4,17 +4,8 @@ SAP ABAP RAP OData V4 Travel Agency App - Joule for Developers Challenge
 # ✈️ SAP RAP Travel Agency - ABAP Developer Challenge
 
 ## 📋 Overview
-Travel Agency application built with SAP ABAP RESTful Application Programming Model (RAP) 
-and OData V4, developed as part of the official **SAP ABAP Developer Challenge - Joule for Developers using Basic Trial**.
-Joule AI was used to generate and enhance the business logic in each weekly challenge.
-
-## 🏆 Challenge Progress
-| Week | Task | Status |
-|---|---|---|
-| Week 1 | Set up Basic Trial account enabled with Joule for Developers | ✅ Done |
-| Week 2 | Use Joule Chat to create ABAP RAP Application and explore Explain feature | ✅ Done |
-| Week 3 | Use RAP Business Logic Prediction to Implement Validation | ✅ Done |
-| Week 4 | Use Joule Predictive Code Completion to Implement Determination | ✅ Done |
+Travel Agency application built with **SAP ABAP RAP** and **OData V4** as part of the 
+official SAP ABAP Developer Challenge - Joule for Developers using Basic Trial.
 
 ## 🛠️ Tech Stack
 ![SAP](https://img.shields.io/badge/SAP-ABAP%20RAP-blue)
@@ -23,49 +14,30 @@ Joule AI was used to generate and enhance the business logic in each weekly chal
 ![Joule](https://img.shields.io/badge/SAP-Joule%20AI-purple)
 ![Eclipse](https://img.shields.io/badge/Eclipse-ADT-darkblue)
 
-- **SAP ABAP RAP** — RESTful Application Programming Model
-- **OData V4** — RESTful service
-- **SAP Fiori Elements** — Auto-generated UI
-- **Eclipse ADT** — Development environment
-- **Joule for Developers** — AI-assisted development
-- **abapGit** — Version control
+## 🏆 Challenge - What was built each week
 
-## 📁 Project Structure
+### Week 1 — Setup
+- Basic Trial account with ABAP instance in ADT
+- Package `ZAC_157732` in ABAP Cloud Project
+- Explored SAP Joule for Developers AI Capabilities
 
-| Object | Type | Description |
-|---|---|---|
-| `ZR_TRAVEL157732_01` | CDS Root View | Interface view with calculated fields |
-| `ZC_TRAVEL157732_01` | CDS Consumption View | UI projection with Side Effects |
-| `ZBP_R_TRAVEL157732_01` | Behavior Class | Validations and Determinations |
-| `ZTRAVEL157732_01` | Database Table | Persistent data |
-| `ZTRVL157732_D_01` | Draft Table | Draft handling |
+### Week 2 — RAP Application + CDS Logic
+- Created ABAP RAP OData V4 app using **Joule Chat** wizard
+- Added calculated field `DiscountedPrice` in CDS using Joule:
+  - 5% discount if `SeatsAvailable < 3`, otherwise 10%
+- Used **Joule Explain** to understand generated code
 
-## ✨ Features
+### Week 3 — Validations with RAP Predict Business Logic
+Using **Joule RAP Predict Business Logic** implemented:
+- `ValidateDestination` → Destination is mandatory
+- `ValidateTravelDate` → Travel date cannot be in the past
+- `ValidateBasePrice` → Base price must be greater than zero
 
-### 📊 Week 2 — Joule Chat
-Created ABAP RAP Application using Joule Chat wizard:
-- OData V4 Service with Fiori Elements UI
-- Transactional with Draft enabled
-- **DiscountedPrice** — Calculated field: 5% discount if seats < 3, otherwise 10%
+### Week 4 — Determinations with Joule Code Prediction
+Using **Joule Predictive Code Completion** implemented:
+- `CalculateDaysUntilDeparture` → Auto-calculates days until TravelDate
+- `CalculateTripStatus` → Sets status based on availability and days:
 
-### ✅ Week 3 — RAP Business Logic Prediction
-Implemented validations using Joule RAP Predict Business Logic:
-
-| Validation | Logic |
-|---|---|
-| **ValidateDestination** | Destination is mandatory |
-| **ValidateTravelDate** | Travel date cannot be in the past |
-| **ValidateBasePrice** | Base price must be greater than zero |
-
-### 🔄 Week 4 — Joule Predictive Code Completion
-Implemented determinations using Joule Predictive Code Completion:
-
-| Determination | Logic |
-|---|---|
-| **CalculateDaysUntilDeparture** | Auto-calculates days until departure from TravelDate |
-| **CalculateTripStatus** | Auto-sets status based on availability and days remaining |
-
-### 🎯 TripStatus Logic
 | Condition | Status |
 |---|---|
 | SeatsAvailable = 0 | Sold Out |
@@ -73,37 +45,163 @@ Implemented determinations using Joule Predictive Code Completion:
 | SeatsAvailable < 3 | Hot Deal |
 | Otherwise | Available |
 
-### ⚡ Side Effects
-Real-time field recalculation without saving:
-- `TravelDate` → recalculates `DaysUntilDeparture`
-- `SeatsAvailable` → recalculates `TripStatus`
-- `DaysUntilDeparture` → recalculates `TripStatus`
+## ⚡ Additional Features
+- **Draft handling** — Transactional with Draft, validations on Prepare action
+- **Side Effects** — Real-time recalculation of `DaysUntilDeparture` and `TripStatus` on field change
 
-### 📝 Draft Handling
-- Transactional with Draft enabled
-- Validations triggered on Draft Prepare action
-
-## 🤖 Joule for Developers Features Used
-
-| Feature | Week | Description |
-|---|---|---|
-| **Joule Chat** | Week 2 | Created RAP app and explored Explain feature |
-| **RAP Predict Business Logic** | Week 3 | Generated validation methods automatically |
-| **Predictive Code Completion** | Week 4 | Step by step determination implementation |
+## 📁 Main Objects
+| Object | Description |
+|---|---|
+| `ZR_TRAVEL157732_01` | CDS Root View + Behavior Definition |
+| `ZC_TRAVEL157732_01` | CDS Consumption View |
+| `ZBP_R_TRAVEL157732_01` | Behavior Implementation Class |
+| `ZTRAVEL157732_01` | Database Table |
 
 ## 📸 Screenshots
-*(Add screenshots of your Fiori app here)*
+*(Add screenshots here)*
 
 ## 🚀 How to Run
-1. Clone this repository
-2. Import package using **abapGit** into your SAP system
-3. Activate all objects
-4. Publish Service Binding `ZUI_TRAVEL157732_O4`
-5. Preview from Service Binding → Entity Set → Preview
+1. Import package via **abapGit**
+2. Activate all objects
+3. Publish Service Binding `ZUI_TRAVEL157732_O4`
+4. Preview from Service Binding → Entity Set → Preview
 
 ## 📬 Contact
-- **LinkedIn:** [Your LinkedIn Profile]
+- **LinkedIn:** [# ✈️ SAP RAP Travel Agency - ABAP Developer Challenge
+
+## 📋 Overview
+Travel Agency application built with **SAP ABAP RAP** and **OData V4** as part of the 
+official SAP ABAP Developer Challenge - Joule for Developers using Basic Trial.
+
+## 🛠️ Tech Stack
+![SAP](https://img.shields.io/badge/SAP-ABAP%20RAP-blue)
+![OData](https://img.shields.io/badge/OData-V4-green)
+![Fiori](https://img.shields.io/badge/SAP-Fiori%20Elements-orange)
+![Joule](https://img.shields.io/badge/SAP-Joule%20AI-purple)
+![Eclipse](https://img.shields.io/badge/Eclipse-ADT-darkblue)
+
+## 🏆 Challenge - What was built each week
+
+### Week 1 — Setup
+- Basic Trial account with ABAP instance in ADT
+- Package `ZAC_157732` in ABAP Cloud Project
+- Explored SAP Joule for Developers AI Capabilities
+
+### Week 2 — RAP Application + CDS Logic
+- Created ABAP RAP OData V4 app using **Joule Chat** wizard
+- Added calculated field `DiscountedPrice` in CDS using Joule:
+  - 5% discount if `SeatsAvailable < 3`, otherwise 10%
+- Used **Joule Explain** to understand generated code
+
+### Week 3 — Validations with RAP Predict Business Logic
+Using **Joule RAP Predict Business Logic** implemented:
+- `ValidateDestination` → Destination is mandatory
+- `ValidateTravelDate` → Travel date cannot be in the past
+- `ValidateBasePrice` → Base price must be greater than zero
+
+### Week 4 — Determinations with Joule Code Prediction
+Using **Joule Predictive Code Completion** implemented:
+- `CalculateDaysUntilDeparture` → Auto-calculates days until TravelDate
+- `CalculateTripStatus` → Sets status based on availability and days:
+
+| Condition | Status |
+|---|---|
+| SeatsAvailable = 0 | Sold Out |
+| DaysUntilDeparture ≤ 7 | Closing Soon |
+| SeatsAvailable < 3 | Hot Deal |
+| Otherwise | Available |
+
+## ⚡ Additional Features
+- **Draft handling** — Transactional with Draft, validations on Prepare action
+- **Side Effects** — Real-time recalculation of `DaysUntilDeparture` and `TripStatus` on field change
+
+## 📁 Main Objects
+| Object | Description |
+|---|---|
+| `ZR_TRAVEL157732_01` | CDS Root View + Behavior Definition |
+| `ZC_TRAVEL157732_01` | CDS Consumption View |
+| `ZBP_R_TRAVEL157732_01` | Behavior Implementation Class |
+| `ZTRAVEL157732_01` | Database Table |
+
+## 📸 Screenshots
+*(Add screenshots here)*
+
+## 🚀 How to Run
+1. Import package via **abapGit**
+2. Activate all objects
+3. Publish Service Binding `ZUI_TRAVEL157732_O4`
+4. Preview from Service Binding → Entity Set → Preview
+
+## 📬 Contact
+- **LinkedIn:** [# ✈️ SAP RAP Travel Agency - ABAP Developer Challenge
+
+## 📋 Overview
+Travel Agency application built with **SAP ABAP RAP** and **OData V4** as part of the 
+official SAP ABAP Developer Challenge - Joule for Developers using Basic Trial.
+
+## 🛠️ Tech Stack
+![SAP](https://img.shields.io/badge/SAP-ABAP%20RAP-blue)
+![OData](https://img.shields.io/badge/OData-V4-green)
+![Fiori](https://img.shields.io/badge/SAP-Fiori%20Elements-orange)
+![Joule](https://img.shields.io/badge/SAP-Joule%20AI-purple)
+![Eclipse](https://img.shields.io/badge/Eclipse-ADT-darkblue)
+
+## 🏆 Challenge - What was built each week
+
+### Week 1 — Setup
+- Basic Trial account with ABAP instance in ADT
+- Package `ZAC_157732` in ABAP Cloud Project
+- Explored SAP Joule for Developers AI Capabilities
+
+### Week 2 — RAP Application + CDS Logic
+- Created ABAP RAP OData V4 app using **Joule Chat** wizard
+- Added calculated field `DiscountedPrice` in CDS using Joule:
+  - 5% discount if `SeatsAvailable < 3`, otherwise 10%
+- Used **Joule Explain** to understand generated code
+
+### Week 3 — Validations with RAP Predict Business Logic
+Using **Joule RAP Predict Business Logic** implemented:
+- `ValidateDestination` → Destination is mandatory
+- `ValidateTravelDate` → Travel date cannot be in the past
+- `ValidateBasePrice` → Base price must be greater than zero
+
+### Week 4 — Determinations with Joule Code Prediction
+Using **Joule Predictive Code Completion** implemented:
+- `CalculateDaysUntilDeparture` → Auto-calculates days until TravelDate
+- `CalculateTripStatus` → Sets status based on availability and days:
+
+| Condition | Status |
+|---|---|
+| SeatsAvailable = 0 | Sold Out |
+| DaysUntilDeparture ≤ 7 | Closing Soon |
+| SeatsAvailable < 3 | Hot Deal |
+| Otherwise | Available |
+
+## ⚡ Additional Features
+- **Draft handling** — Transactional with Draft, validations on Prepare action
+- **Side Effects** — Real-time recalculation of `DaysUntilDeparture` and `TripStatus` on field change
+
+## 📁 Main Objects
+| Object | Description |
+|---|---|
+| `ZR_TRAVEL157732_01` | CDS Root View + Behavior Definition |
+| `ZC_TRAVEL157732_01` | CDS Consumption View |
+| `ZBP_R_TRAVEL157732_01` | Behavior Implementation Class |
+| `ZTRAVEL157732_01` | Database Table |
+
+## 📸 Screenshots
+*(Add screenshots here)*
+
+## 🚀 How to Run
+1. Import package via **abapGit**
+2. Activate all objects
+3. Publish Service Binding `ZUI_TRAVEL157732_O4`
+4. Preview from Service Binding → Entity Set → Preview
+
+## 📬 Contact
+- **LinkedIn:** [www.linkedin.com/in/angeles-camacho-solis]
 - **GitHub:** [@AngieFeJU](https://github.com/AngieFeJU)
+
 
 ---
 ⭐ If you found this helpful, please give it a star!
