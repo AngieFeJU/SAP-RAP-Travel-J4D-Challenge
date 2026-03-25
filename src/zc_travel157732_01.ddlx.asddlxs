@@ -1,0 +1,223 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'TravelID'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'TravelID'
+annotate view ZC_TRAVEL157732_01 with
+{
+  @EndUserText.label: 'UUID'
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'UUID'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'UUID'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  UUID;
+  
+  @EndUserText.label: 'TravelID'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 20 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'TravelID'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'TravelID'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  TravelID;
+  
+  @EndUserText.label: 'Destination'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Destination'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Destination'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Destination;
+  
+  @EndUserText.label: 'Agency'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Agency'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'Agency'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  Agency;
+  
+  @EndUserText.label: 'TravelDate'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'TravelDate'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'TravelDate'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  TravelDate;
+  
+  @EndUserText.label: 'BasePrice'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'BasePrice'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'BasePrice'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  BasePrice;
+  
+  @EndUserText.label: 'SeatsAvailable'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'SeatsAvailable'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'SeatsAvailable'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  SeatsAvailable;
+  
+  @EndUserText.label: 'DiscountedPrice'
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'DiscountedPrice'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'DiscountedPrice'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  DiscountedPrice;
+  
+  @EndUserText.label: 'DaysUntilDeparture'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'DaysUntilDeparture'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'DaysUntilDeparture'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  DaysUntilDeparture;
+  
+  @EndUserText.label: 'TripStatus'
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'TripStatus'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 , 
+    label: 'TripStatus'
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  TripStatus;
+  
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  @UI.lineItem: [ {
+    position: 110 
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 120 
+  } ]
+  @UI.lineItem: [ {
+    position: 120 
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 130 
+  } ]
+  @UI.lineItem: [ {
+    position: 130 
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  LocalLastChangedBy;
+  
+  @UI.identification: [ {
+    position: 140 
+  } ]
+  @UI.lineItem: [ {
+    position: 140 
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  LocalLastChangedAt;
+  
+  @UI.identification: [ {
+    position: 150 
+  } ]
+  @UI.lineItem: [ {
+    position: 150 
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  LastChangedAt;
+  
+  @EndUserText.label: '_BaseEntity'
+  @UI.identification: [ {
+    position: 160 , 
+    label: '_BaseEntity'
+  } ]
+  @UI.lineItem: [ {
+    position: 160 , 
+    label: '_BaseEntity'
+  } ]
+  @UI.selectionField: [ {
+    position: 160 
+  } ]
+  _BaseEntity;
+}

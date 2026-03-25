@@ -1,0 +1,75 @@
+managed implementation in class ZBP_R_TRAVEL157732_01 unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_TRAVEL157732_01 alias Travel157732
+persistent table ZTRAVEL157732_01
+extensible
+draft table ZTRVL157732_D_01
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( readonly )
+   UUID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( mandatory ) Destination;
+
+  field ( numbering : managed )
+   UUID;
+
+
+  create;
+  update;
+  delete;
+
+  validation ValidateDestination on save { create; update; }
+  validation ValidateTravelDate on save { create; update; }
+  validation ValidateBasePrice on save { create; update; }
+  determination CalculateDaysUntilDeparture on modify { create; field TravelDate; }
+  determination CalculateTripStatus on modify { create; field SeatsAvailable; field DaysUntilDeparture; }
+
+  side effects {
+    field TravelDate affects field DaysUntilDeparture;
+    field SeatsAvailable affects field TripStatus;
+    field DaysUntilDeparture affects field TripStatus;
+  }
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+
+  draft determine action Prepare {
+
+    validation ValidateDestination;
+    validation ValidateTravelDate;
+    validation ValidateBasePrice;
+  }
+
+  mapping for ZTRAVEL157732_01 corresponding extensible
+  {
+    UUID = UUID;
+    TravelID = TRAVEL_ID;
+    Destination = DESTINATION;
+    Agency = AGENCY;
+    TravelDate = TRAVEL_DATE;
+    BasePrice = BASE_PRICE;
+    SeatsAvailable = SEATS_AVAILABLE;
+    DiscountedPrice = DISCOUNTED_PRICE;
+    DaysUntilDeparture = DAYS_UNTIL_DEPARTURE;
+    TripStatus = TRIP_STATUS;
+    Usd = USD;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+	
+}
