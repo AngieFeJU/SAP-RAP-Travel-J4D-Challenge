@@ -14,6 +14,12 @@ official SAP ABAP Developer Challenge - Joule for Developers using Basic Trial.
 ![Joule](https://img.shields.io/badge/SAP-Joule%20AI-purple)
 ![Eclipse](https://img.shields.io/badge/Eclipse-ADT-darkblue)
 
+## 🤖 Joule for Developers Features Used
+![Joule Chat](https://img.shields.io/badge/Joule-Chat-purple)
+![Joule Explain](https://img.shields.io/badge/Joule-Explain-blueviolet)
+![RAP Predict](https://img.shields.io/badge/Joule-RAP%20Predict%20Business%20Logic-darkviolet)
+![Code Prediction](https://img.shields.io/badge/Joule-Predictive%20Code%20Completion-violet)
+
 ## 🏆 Challenge - What was built each week
 
 ### Week 1 — Setup
